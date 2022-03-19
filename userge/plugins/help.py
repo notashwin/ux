@@ -66,22 +66,15 @@ VOTE = get_collection("VOTES")
 SEEN_BY = get_collection("SEEN_BY")
 REPO_X = InlineQueryResultArticle(
     title="Repo",
-    input_message_content=InputTextMessageContent("**Here's how to setup USERGE-X** "),
-    url="https://github.com/ashwinstr/UX-jutsu",
-    description="Setup Your Own",
-    thumb_url="https://telegra.ph/file/8fa91f9c7f6f4f6b8fa6c.jpg",
+    input_message_content=InputTextMessageContent("🔗 **Click below to get sudo instantly!!**"),
+    # url="https://bit.ly/getsudo",
+    description="Get Sudo",
+    thumb_url="https://telegra.ph/file/70b6069c59ed4cc35f58c.jpg",
     reply_markup=InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    "🔥 USERGE-X Repo", url="https://github.com/ashwinstr/UX-jutsu"
-                ),
-                InlineKeyboardButton(
-                    "🚀 Deploy USERGE-X",
-                    url=(
-                        "https://heroku.com/deploy?template="
-                        "https://github.com/ash/MyGpack"
-                    ),
+                    "Click Here", url="https://bit.ly/getsudo"
                 ),
             ]
         ]
