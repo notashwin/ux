@@ -51,7 +51,7 @@ async def make_tweet(message: Message):
     json_ = json.dumps(form_, indent=4)
     if pfp_:
         down_ = await userge.download_media(pfp_)
-        msg_ = await userge.send_photo(bot_, down_, caption=json_)
+        await userge.send_photo(bot_, down_, caption=json_)
         os.remove(down_)
     else:
         await userge.send_message(bot_, json_)
@@ -122,7 +122,7 @@ async def make_quote(message: Message):
     json_ = json.dumps(form_, indent=4)
     if pfp_:
         down_ = await userge.download_media(pfp_)
-        msg_ = await userge.send_photo(bot_, down_, caption=json_)
+        await userge.send_photo(bot_, down_, caption=json_)
         os.remove(down_)
     else:
         await userge.send_message(bot_, json_)
