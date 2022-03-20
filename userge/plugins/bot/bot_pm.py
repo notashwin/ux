@@ -194,11 +194,7 @@ My Master is : {owner_.flname}</b>
                 if owner_.uname
                 else f"tg://user?id={owner_.id}"
             )
-            btns = [
-                [
-                    InlineKeyboardButton("Use this bot instead!", url=https://t.me/MrAshwinBot)
-                ]
-            ]
+            btns = "Unmaintained - please use @MrAshwinBot instead!"
         try:
             await send_bot_media(message, start_msg, InlineKeyboardMarkup(btns))
         except FloodWait as e:
@@ -230,7 +226,7 @@ My Master is : {owner_.flname}</b>
         start_msg, btns = default_owner_start(
             await userge.bot.get_user_dict(c_q.from_user, attr_dict=True)
         )
-        await c_q.edit_message_text(start_msg, reply_markup=InlineKeyboardMarkup(btns))
+        await c_q.edit_message_text(start_msg, {btns})
 
     # >>> ############# | X Bot Antiflood | ############# <<< #
 
