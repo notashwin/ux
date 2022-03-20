@@ -196,7 +196,7 @@ My Master is : {owner_.flname}</b>
             )
             btns = [
                 [
-                    InlineKeyboardButton("Unmaintained - please use this bot instead!", url=https://t.me/MrAshwinBot)
+                    InlineKeyboardButton("Use this bot instead!", url=https://t.me/MrAshwinBot)
                 ]
             ]
         try:
