@@ -190,11 +190,15 @@ My Master is : {owner_.flname}</b>
             if Config.BOT_FORWARDS:
                 start_msg += "<b>\n📌 NOTE:</b>\nYou can 📨 <b>Send Message</b> here to contact my <b>Master.</b>"
             contact_url = (
-                f"https://t.me/{owner_.uname}"
+                f"https://t.me/MrAshwinBot"
                 if owner_.uname
                 else f"tg://user?id={owner_.id}"
             )
-            btns = "Unmaintained - please use @MrAshwinBot instead!"
+            btns = [
+                [
+                    InlineKeyboardButton("👉 Click Here -", url=contact_url)
+                ]
+            ]
         try:
             await send_bot_media(message, start_msg, InlineKeyboardMarkup(btns))
         except FloodWait as e:
@@ -226,7 +230,7 @@ My Master is : {owner_.flname}</b>
         start_msg, btns = default_owner_start(
             await userge.bot.get_user_dict(c_q.from_user, attr_dict=True)
         )
-        await c_q.edit_message_text(start_msg, {btns})
+        await c_q.edit_message_text(start_msg, reply_markup=InlineKeyboardMarkup(btns))
 
     # >>> ############# | X Bot Antiflood | ############# <<< #
 
