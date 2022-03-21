@@ -49,7 +49,7 @@ async def _init() -> None:
 
 
 @userge.on_cmd(
-    "allow",
+    "a",
     about={
         "header": "allows someone to contact",
         "description": "Ones someone is allowed, "
@@ -88,7 +88,7 @@ async def allow(message: Message):
 
 
 @userge.on_cmd(
-    "nopm",
+    "da",
     about={
         "header": "Activates guarding on inbox",
         "description": "Ones someone is allowed, "
