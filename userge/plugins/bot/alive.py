@@ -156,7 +156,7 @@ async def send_alive_message(message: Message) -> None:
     if not Config.ALIVE_MEDIA:
         await client.send_photo(
             chat_id,
-            photo=Bot_Alive.alive_default_imgs(),
+            photo = "https://telegra.ph/file/9d454a808d90f01b74993.jpg",
             caption=caption,
             reply_markup=reply_markup,
         )
