@@ -65,7 +65,7 @@ async def set_alive_media(message: Message):
         if found:
             media_ = found["url"]
         else:
-            media_ = "https://telegra.ph/file/882913e9e535822d600a7.jpg"
+            media_ = "https://telegra.ph/file/9d454a808d90f01b74993.jpg"
         return await message.edit(f"The alive media is set to [<b>THIS</b>]({media_}).")
     elif "-r" in message.flags:
         if not found:
@@ -149,9 +149,9 @@ async def send_alive_message(message: Message) -> None:
         reply_markup = None
         file_id = _USER_CACHED_MEDIA
         caption += (
-            f"\n⚡️  <a href={Config.UPSTREAM_REPO}><b>REPO</b></a>"
+            f"\n⚡️  <a href='https://t.me/AshwinRedirect'><b>REPO</b></a>"
             "    <code>|</code>    "
-            "👥  <a href='https://t.me/useless_x'><b>SUPPORT</b></a>"
+            "👥  <a href='https://t.me/AshwinRedirect'><b>SUPPORT</b></a>"
         )
     if not Config.ALIVE_MEDIA:
         await client.send_photo(
@@ -285,7 +285,7 @@ class Bot_Alive:
     def alive_info(me):
         u_name = " ".join([me.first_name, me.last_name or ""])
         alive_info = f"""
-­<a href="https://t.me/xplugin"><b>𝐕𝐄𝐍𝐎𝐌</a> is spreading.</b>
+­<a href="https://t.me/AshwinRedirect"><b>𝐕𝐄𝐍𝐎𝐌</a> is spreading.</b>
 
   🐍   <b>Python      :</b>    <code>v{versions.__python_version__}</code>
   🔥   <b>Pyrogram :</b>    <code>v{versions.__pyro_version__}</code>
@@ -315,7 +315,7 @@ class Bot_Alive:
     @staticmethod
     def alive_default_imgs() -> str:
         alive_imgs = [
-            "https://telegra.ph/file/882913e9e535822d600a7.jpg", "https://telegra.ph/file/9d454a808d90f01b74993.jpg"
+            "https://telegra.ph/file/9d454a808d90f01b74993.jpg"
         ]
         return rand_array(alive_imgs)
 
