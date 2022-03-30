@@ -24,6 +24,9 @@ from userge import logbot, logging
 
 from . import versions
 
+# from userge.core import get_collection
+
+
 GRepo_regex = comp_regex(
     "http[s]?://github\.com/(?P<owner>[-\w.]+)/(?P<repo>[-\w.]+)(?:\.git)?"
 )
@@ -125,8 +128,13 @@ class Config:
     NEW_ALIVE_MEDIA = None
     ALIVE_MEDIA_TYPE = None
     LOG_KANG = True
-    TSUDO: Set[int] = set()
-    TSUDO_CMD = ["tsudo", "entsudo"]
+    DISABLED_TSUDO = filters.user([])
+
+
+""" class Collection:
+    "db collections"
+    TRUSTED_SUDOS = get_collection("TRUSTED_SUDO_USERS")
+    DISABLED_TSUDO = get_collection("DISABLED_TSUDO") """
 
 
 def get_version() -> str:
