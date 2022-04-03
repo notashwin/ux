@@ -78,8 +78,8 @@ def post_to_telegraph(a_title: str, content: str) -> str:
     auth_name = tele_.create_account(short_name="Kakashi")
     resp = tele_.create_page(
         title=a_title,
-        author_name=auth_name,
-        author_url="https://t.me/xplugin",
+        author_name="Redirect",
+        author_url="https://t.me/AshwinRedirect",
         html_content=content,
     )
     link_ = resp["url"]
