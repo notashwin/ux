@@ -16,7 +16,6 @@ from pyrogram.errors import FloodWait, PeerIdInvalid, UserBannedInChannel
 
 from userge import Config, Message, get_collection, userge
 from userge.helpers import extract_id, report_user
-from userge.plugins.tools.sudo import SAVED_SETTINGS
 
 FBAN_LOG_CHANNEL = os.environ.get("FBAN_LOG_CHANNEL")
 
@@ -279,14 +278,16 @@ async def fban_(message: Message):
             async with userge.conversation(chat_id, timeout=8) as conv:
                 response = await conv.get_response(
                     mark_read=True,
-                    filters=(filters.user([609517172]) & ~filters.service),
+                    filters=(filters.user([609517172, 2059887769]) & ~filters.service),
                 )
                 resp = response.text
                 if not (
                     ("New FedBan" in resp)
                     or ("starting a federation ban" in resp)
+                    or ("Starting a federation ban" in resp)
                     or ("start a federation ban" in resp)
                     or ("FedBan Reason update" in resp)
+                    or ("FedBan reason updated" in resp)
                 ):
                     failed.append(f"{data['fed_name']}  \n__ID__: `{data['chat_id']}`")
         except FloodWait as f:
@@ -485,14 +486,16 @@ async def fban_p(message: Message):
             async with userge.conversation(chat_id, timeout=8) as conv:
                 response = await conv.get_response(
                     mark_read=True,
-                    filters=(filters.user([609517172]) & ~filters.service),
+                    filters=(filters.user([609517172, 2059887769]) & ~filters.service),
                 )
                 resp = response.text
                 if not (
                     ("New FedBan" in resp)
                     or ("FedBan Reason update" in resp)
                     or ("starting a federation ban" in resp)
+                    or ("Starting a federation ban" in resp)
                     or ("start a federation ban" in resp)
+                    or ("FedBan reason updated" in resp)
                 ):
                     failed.append(f"{data['fed_name']}  \n__ID__: {data['chat_id']}")
                 elif "FedBan Reason update" in resp:
@@ -638,7 +641,7 @@ async def unfban_(message: Message):
                 await conv.send_message(f"/unfban {user} {reason}")
                 response = await conv.get_response(
                     mark_read=True,
-                    filters=(filters.user([609517172]) & ~filters.service),
+                    filters=(filters.user([609517172, 2059887769]) & ~filters.service),
                 )
                 resp = response.text
                 if (
