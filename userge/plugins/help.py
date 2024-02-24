@@ -518,7 +518,6 @@ if userge.has_bot:
             )
             and Config.SUDO_ENABLED
         ):
-
             if string == "syntax":
                 owner = [
                     [
